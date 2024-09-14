@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 450" opacity="1">
+    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 450" opacity="0.45">
     <defs>
         <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%"
             filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse"
@@ -9,9 +9,7 @@
         </filter>
     </defs>
     <g filter="url(#bbblurry-filter)">
-        <ellipse rx="123" ry="114" cx="580.3906527432528" cy="178.86507485129616"
-            fill="hsla(0, 0%, 74%, 1.00)"></ellipse>
-        <ellipse rx="123" ry="114" cx="94.287353515625" cy="319.0121154785156"
-            fill="hsla(0, 0%, 41%, 1.00)"></ellipse>
+        <ellipse rx="259.5" ry="277.5" cx="398.47001231800436" cy="177.392241044478"
+            fill="hsla(0, 0%, 75%, 1.00)"></ellipse>
     </g>
 </svg>
