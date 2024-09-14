@@ -72,7 +72,7 @@ export function SignInForm() {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+        <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
             name="username"
@@ -99,12 +99,19 @@ export function SignInForm() {
               </FormItem>
             )}
           />
-          <div>
-            <Button type="submit" className="w-full" disabled={isLoading}>
+          <div className="flex flex-col my-12">
+            <Button type="submit" className="w-full m-0" disabled={isLoading}>
               {isLoading && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
               )}
               Sign In
+            </Button>
+            <div className="text-center my-2">or</div>
+            <Button type="submit" className="w-full m-0" disabled={isLoading}>
+              {isLoading && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              Sign Up
             </Button>
           </div>
         </form>
@@ -125,45 +132,29 @@ export function SignIn() {
 
   return (
     <>
-      <div className="container relative h-screen grid-cols-1 flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 px-0">
-        <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-          <div className="absolute inset-0 bg-zinc-800 dark:bg-black" />
-          <div className="relative z-20 flex items-center text-lg font-medium">
-            Samsung Electro Mechanics
-          </div>
-          <div className="relative z-20 mt-auto">
-            <blockquote className="mt-6 border-l-2 pl-6 italic">
-              "After all," he said, "everyone enjoys a good joke, so it's only
-              fair that they should pay for the privilege."
-            </blockquote>
-            <footer className="pl-6 text-base mt-2">Akhil kunda</footer>
-          </div>
-        </div>
-        <div className="relative h-full w-full lg:p-8 flex justify-center items-center">
-          <img
-            className="dark:hidden absolute top-0 left-0 h-full w-full object-cover z-[-10]"
-            src={lightBg}
-            alt="no-data-found"
-          />
-          <img
-            className="absolute top-0 left-0 h-full w-full object-cover z-[-10]"
-            src={darkBg}
-            alt="no-data-found"
-          />
-          <Card className="my-auto z-20 flex flex-col justify-center space-y-6 w-4/5 lg:w-[400px] border-none shadow-xl dark:shadow-xl">
-            <CardHeader>
-              <CardTitle>
-                Sign In to <SembTitle />
-              </CardTitle>
-              <CardDescription>
-                Enter your username and password.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <SignInForm />
-            </CardContent>
-          </Card>
-        </div>
+      <div className="z-10 relative h-screen w-screen flex items-center justify-center px-0">
+        <div className="absolute h-full w-full top-0 left-0 bg-gray-400 dark:bg-gray-950 opacity-25 dark:opacity-35"></div>
+        <img
+          className="dark:hidden absolute top-0 left-0 h-full w-full object-cover z-[-10]"
+          src={lightBg}
+          alt="no-data-found"
+        />
+        <img
+          className="hidden dark:block absolute top-0 left-0 h-full w-full object-cover z-[-10]"
+          src={darkBg}
+          alt="no-data-found"
+        />
+        <Card className="my-auto z-10 flex flex-col justify-center space-y-10 w-4/5 md:w-[380px] border-none shadow-2xl">
+          <CardHeader>
+            <CardTitle>
+              Sign In to <SembTitle />
+            </CardTitle>
+            <CardDescription>Enter your username and password.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <SignInForm />
+          </CardContent>
+        </Card>
       </div>
     </>
   );

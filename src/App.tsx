@@ -5,6 +5,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import {mockGetUserDetails} from "./services/api";
 import { userDetailsAtom } from "./store/userDetails";
+import lightBg from "@/assets/home-light.svg";
 
 function App() {
   const [userDetails, setUserDetails] = useRecoilState(userDetailsAtom);
@@ -32,16 +33,23 @@ function App() {
   }, []);
 
   return (
-    <div className={`${isLoading ? "opacity-0" : "opacity-100"} transition-opacity ease-in-out flex flex-col h-screen`}>
-      <Header className="h-14 flex-shrink-0" />
-      <div className="flex-1 flex">
-        <div>
-          <SideNav />
-        </div>
-        <div className="flex-1">
-          <Outlet />
-        </div>
-      </div>
+    <div
+      className={`${
+        isLoading ? "opacity-0" : "opacity-100"
+      } relative transition-opacity ease-in-out h-screen w-screen`}
+    >
+      <div className="absolute h-full w-full top-0 left-0 bg-gray-300 dark:bg-gray-950 opacity-10 dark:opacity-35"></div>
+      <img
+        className="dark:hidden absolute top-0 left-0 h-full w-full object-cover z-[-10]"
+        src={lightBg}
+        alt="no-data-found"
+      />
+      <img
+        className="hidden dark:block absolute top-0 left-0 h-full w-full object-cover z-[-10]"
+        src={lightBg}
+        alt="no-data-found"
+      />
+      <Outlet />
     </div>
   );
 }
