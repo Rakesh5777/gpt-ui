@@ -1,6 +1,6 @@
 import mobileSideNav from "@/assets/mobile-side-nav.svg";
 import sideBarLeft from "@/assets/sidebar-left.svg";
-import { NewChatIcon } from "@/components/newChat";
+import { NewChatIcon } from "@/components/newChatIcon";
 import { PreviousConversation } from "@/components/previousConversation";
 import UserAvatarPopover from "@/components/userAvatarPopover";
 import { sideNavAtom } from "@/store/applicationSettings";
@@ -27,40 +27,38 @@ const MobileDrawer = () => {
 
   return (
     <>
-      <div className="shrink-0 lg:hidden absolute top-0 left-0 h-full w-full">
-        {sideNavState.isDrawerOpen && (
-          <div
-            id="overlay"
-            className={`absolute z-30 top-0 h-full w-full bg-background/35`}
-            onClick={() => {
-              setSideNavState((state) => ({
-                isDrawerOpen: false,
-                sideNavExpand: false,
-              }));
-            }}
-          ></div>
-        )}
-        <aside
-          className={`absolute z-30 top-0 h-full transition-all overflow-hidden flex flex-col max-w-[320px] ${
-            sideNavState.isDrawerOpen ? "w-2/3" : "w-0"
-          } bg-primary-foreground`}
-        >
-          <header className="h-14 flex shrink-0 justify-between items-center px-4">
-            <img
-              src={mobileSideNav}
-              onClick={toggleSideDrawer}
-              className="lg:hidden h-[14px] cursor-pointer pt-[2px]"
-            />
-            <NewChatIcon />
-          </header>
-          <div className="flex-1">
-            <PreviousConversation />
-          </div>
-          <footer className="shrink-0 h-14 flex items-center px-4">
-            <UserAvatarPopover showName={true} />
-          </footer>
-        </aside>
-      </div>
+      {sideNavState.isDrawerOpen && (
+        <div
+          id="overlay"
+          className={`absolute z-30 top-0 h-full w-full bg-primary/40`}
+          onClick={() => {
+            setSideNavState((state) => ({
+              isDrawerOpen: false,
+              sideNavExpand: false,
+            }));
+          }}
+        ></div>
+      )}
+      <aside
+        className={`absolute z-30 top-0 h-full transition-all overflow-hidden flex flex-col max-w-[320px] ${
+          sideNavState.isDrawerOpen ? "w-2/3" : "w-0"
+        } bg-primary-foreground`}
+      >
+        <header className="h-14 flex shrink-0 justify-between items-center px-4">
+          <img
+            src={mobileSideNav}
+            onClick={toggleSideDrawer}
+            className="lg:hidden h-[14px] cursor-pointer pt-[2px]"
+          />
+          <NewChatIcon />
+        </header>
+        <div className="flex-1">
+          <PreviousConversation />
+        </div>
+        <footer className="shrink-0 h-14 flex items-center px-4">
+          <UserAvatarPopover showName={true} />
+        </footer>
+      </aside>
     </>
   );
 };

@@ -125,7 +125,7 @@ export function SignIn() {
     <>
       <div className="container relative h-screen grid-cols-1 flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 px-0">
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-          <div className="absolute inset-0 bg-zinc-900 dark:bg-primary-foreground" />
+          <div className="absolute inset-0 bg-zinc-800 dark:bg-primary-foreground" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             Samsung Electro Mechanics
           </div>

@@ -1,5 +1,5 @@
 import sideBarRight from "@/assets/sidebar-right.svg";
-import { NewChatIcon } from "@/components/newChat";
+import { NewChatIcon } from "@/components/newChatIcon";
 import { SembTitle } from "@/components/sembTitle";
 import UserAvatarPopover from "@/components/userAvatarPopover";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,7 @@ export const DesktopHeader = ({ className = "" }) => {
   return (
     <header
       className={cn(
-        "hidden lg:flex bg-background z-20 px-2 items-center justify-between",
+        "hidden lg:flex bg-background z-20 px-4 items-center justify-between",
         className
       )}
     >

@@ -3,7 +3,7 @@ import { sideNavAtom } from "@/store/applicationSettings";
 import mobileSideNav from "@/assets/mobile-side-nav.svg";
 import { cn } from "@/lib/utils";
 import { SembTitle } from "@/components/sembTitle";
-import { NewChatIcon } from "@/components/newChat";
+import { NewChatIcon } from "@/components/newChatIcon";
 
 export const MobileHeader = ({ className = "" }) => {
   const [sideNavState, setSideNavState] = useRecoilState(sideNavAtom);

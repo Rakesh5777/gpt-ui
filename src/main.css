@@ -114,3 +114,22 @@
 * {
   box-sizing: border-box;
 }
+
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+}
