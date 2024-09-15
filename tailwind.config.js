@@ -73,6 +73,11 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'fade-left-half': 'linear-gradient(to right, transparent 0%, hsl(var(--primary-foreground)) 50%, hsl(var(--primary-foreground)) 100%)',
+        'fade-left-half-primary': 'linear-gradient(to right, transparent 0%, hsl(var(--secondary)) 50%, hsl(var(--secondary)) 100%)',
+      },
+
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,9 +1,7 @@
-import Header from "@/layouts/header";
-import { SideNav } from "@/layouts/sidenav";
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import {mockGetUserDetails} from "./services/api";
+import { mockGetUserDetails } from "./services/api";
 import { userDetailsAtom } from "./store/userDetails";
 
 function App() {
@@ -32,16 +30,12 @@ function App() {
   }, []);
 
   return (
-    <div className={`${isLoading ? "opacity-0" : "opacity-100"} transition-opacity ease-in-out flex flex-col h-screen`}>
-      <Header className="h-14 flex-shrink-0" />
-      <div className="flex-1 flex">
-        <div>
-          <SideNav />
-        </div>
-        <div className="flex-1">
-          <Outlet />
-        </div>
-      </div>
+    <div
+      className={`${
+        isLoading ? "opacity-0" : "opacity-100"
+      } h-screen w-screen relative transition-opacity ease-in-out flex flex-col h-screen`}
+    >
+      <Outlet />
     </div>
   );
 }

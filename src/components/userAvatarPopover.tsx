@@ -16,7 +16,7 @@ const sideNavList = [
   },
 ];
 
-const UserAvatarPopover = () => {
+const UserAvatarPopover = ({ showName = false }) => {
   const userDetails = useRecoilValue(userDetailsAtom);
   const [popover, setPopover] = React.useState(false);
   const [_token, setToken] = useLocalStorage("token", "");
@@ -29,10 +29,13 @@ const UserAvatarPopover = () => {
 
   return (
     <Popover open={popover} onOpenChange={setPopover}>
-      <PopoverTrigger>
+      <PopoverTrigger className="flex gap-2 items-center cursor-pointer w-full">
         <Avatar>
-          <AvatarFallback>{userDetails.username?.slice(0, 2)?.toUpperCase()}</AvatarFallback>
+          <AvatarFallback>
+            {userDetails.username?.slice(0, 2)?.toUpperCase()}
+          </AvatarFallback>
         </Avatar>
+        {showName && userDetails.username}
       </PopoverTrigger>
       <PopoverContent className="mt-1">
         <Card className="border-none p-0 shadow-none">
@@ -40,11 +43,15 @@ const UserAvatarPopover = () => {
             <CardTitle>
               <div className="flex items-center gap-2">
                 <Avatar>
-                  <AvatarFallback>{userDetails.username?.slice(0, 2)?.toUpperCase()}</AvatarFallback>
+                  <AvatarFallback>
+                    {userDetails.username?.slice(0, 2)?.toUpperCase()}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="flex flex-1 flex-col gap-1">
                   <span className="truncate">{userDetails.username}</span>
-                  <span className="text-sm text-gray-500 truncate">{userDetails.email}</span>
+                  <span className="text-sm text-gray-500 truncate">
+                    {userDetails.email}
+                  </span>
                 </div>
               </div>
             </CardTitle>

@@ -2,11 +2,11 @@ import App from "@/App";
 import ErrorPage from "@/pages/errorPage";
 import { createBrowserRouter, redirect } from "react-router-dom";
 import { SignIn } from "./pages/SignIn";
-import { Dashboard } from "@/pages/dashboard/dashboard";
 import { Customers } from "@/pages/customers/customers";
 import { Settings } from "./pages/settings.tsx/settings";
 import { CreateCustomer } from "@/pages/customers/components/createCreate";
 import { CustomerDashboard } from "./pages/customers/components/customerDashboard";
+import { Home } from "./pages/home/home";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard />,
+        element: <Home />,
       },
       {
         path: "/customers",

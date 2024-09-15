@@ -26,7 +26,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { z } from "zod";
-import lightBg from "@/assets/sign-in-light.svg";
 
 export const SignInSchema = z
   .object({
@@ -126,7 +125,7 @@ export function SignIn() {
     <>
       <div className="container relative h-screen grid-cols-1 flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 px-0">
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-          <div className="absolute inset-0 bg-zinc-900 dark:bg-black" />
+          <div className="absolute inset-0 bg-zinc-900 dark:bg-primary-foreground" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             Samsung Electro Mechanics
           </div>
@@ -138,13 +137,8 @@ export function SignIn() {
             <footer className="pl-6 text-base mt-2">Akhil kunda</footer>
           </div>
         </div>
-        <div className="relative h-full w-full lg:p-8 flex justify-center items-center dark:bg-zinc-900">
-          <img
-            className="dark:hidden absolute top-0 left-0 h-full w-full object-cover z-[-10]"
-            src={lightBg}
-            alt="no-data-found"
-          />
-          <Card className="my-auto z-20 flex flex-col justify-center space-y-6 w-4/5 lg:w-[400px] border-none shadow-xl dark:shadow-xl">
+        <div className="relative h-full w-full lg:p-8 flex justify-center items-center dark:bg-zinc-800 bg-zinc-200">
+          <Card className="my-auto z-20 flex flex-col justify-center space-y-6 w-4/5 lg:w-[400px] border-none shadow-2xl">
             <CardHeader>
               <CardTitle>
                 Sign In to <SembTitle />
