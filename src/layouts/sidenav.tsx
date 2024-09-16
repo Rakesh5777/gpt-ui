@@ -30,7 +30,7 @@ const MobileDrawer = () => {
       {sideNavState.isDrawerOpen && (
         <div
           id="overlay"
-          className={`absolute z-30 top-0 h-full w-full bg-primary/40`}
+          className={`absolute z-30 top-0 h-full w-full bg-primary/40 dark:bg-primary/5`}
           onClick={() => {
             setSideNavState((state) => ({
               isDrawerOpen: false,
@@ -55,7 +55,7 @@ const MobileDrawer = () => {
         <div className="flex-1">
           <PreviousConversation />
         </div>
-        <footer className="shrink-0 h-14 flex items-center px-4">
+        <footer className="shrink-0 h-16 flex items-center px-4">
           <UserAvatarPopover showName={true} />
         </footer>
       </aside>
